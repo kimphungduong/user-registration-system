@@ -99,7 +99,6 @@ http://localhost:3001
   email: string,           // Unique, lowercase, trimmed
   password: string,        // Hashed with bcrypt (salt rounds: 10)
   createdAt: Date,         // Auto-generated timestamp
-  updatedAt: Date,         // Auto-generated timestamp
   __v: number             // Mongoose version key
 }
 ```
@@ -111,7 +110,6 @@ http://localhost:3001
   "email": "user@example.com",
   "password": "$2b$10$rQXhZ8K9vZ8N2vP5eQXhZ8K9vZ8N2vP5eQXhZ8K9vZ8",
   "createdAt": "2024-11-24T04:30:52.123Z",
-  "updatedAt": "2024-11-24T04:30:52.123Z",
   "__v": 0
 }
 ```
@@ -134,6 +132,27 @@ http://localhost:3001
 - Original passwords are never stored
 - Hash format: `$2b$10$[salt][hash]`
 
+## Testing
+
+### Using cURL
+```bash
+# Register a new user
+curl -X POST http://localhost:3001/user/register \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","password":"123456"}'
+```
+
+### Using Postman
+1. Method: `POST`
+2. URL: `http://localhost:3001/user/register`
+3. Headers: `Content-Type: application/json`
+4. Body (raw JSON):
+```json
+{
+  "email": "test@example.com",
+  "password": "123456"
+}
+```
 
 ## Monitoring
 
@@ -154,7 +173,7 @@ Monitor NestJS console logs:
 3. Select `user-registration` database
 4. View `users` collection
 
-## 🛠️ Scripts
+## Scripts
 ```bash
 # Development
 npm run start:dev        # Start in watch mode
@@ -171,3 +190,6 @@ npm run test:e2e       # Run end-to-end tests
 npm run lint           # Run ESLint
 npm run format         # Format code with Prettier
 ```
+
+## Deployment URLs
+https://user-registration-system-bip9.onrender.com
