@@ -63,7 +63,7 @@ This project is a complete user registration system that includes:
 
 ### Clone Repository
 ```bash
-git clone https://github.com/kimphungduong/userregistrationsystem.git
+git clone https://github.com/kimphungduong/user-registration-system.git
 cd user-registration-system
 ```
 
@@ -216,4 +216,4 @@ curl -X POST http://localhost:3001/user/register \
 | Routing (Home, Login, Sign Up) | 1 | ✅ |
 | Sign Up Page (Form, Validation, API Integration) | 2 | ✅ |
 | Login Page (Form, Validation, UI) | 2 | ✅ |
-| Public Deployment | 1 | ⏳ |
+| Public Deployment | 1 | ✅ |
